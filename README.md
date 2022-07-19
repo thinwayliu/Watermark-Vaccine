@@ -2,7 +2,7 @@
 The code for ECCV2022 (Watermark Vaccine: Adversarial Attacks to Prevent Watermark Removal)
 
 ## Introduction
-- The code is the implementation of the paper Watermark Vaccine: Adversarial Attacks to Prevent Watermark Removal.
+- The code is the implementation of the paper Watermark Vaccine: [Adversarial Attacks to Prevent Watermark Removal](https://arxiv.org/abs/2207.08178).
 - This paper has been received by ECCV 2020.
 
 ![The framework of Watermark Vaccine](./framework.png)
