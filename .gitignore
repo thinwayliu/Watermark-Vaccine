@@ -1,4 +1,4 @@
-model_best.pth
+model_best.pth.tar
 net_baseline_11.pth
 train_params.pkl
 WDNet_D.pkl
