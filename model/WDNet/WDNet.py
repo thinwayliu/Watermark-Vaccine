@@ -3,9 +3,9 @@ import numpy as np
 import torch.nn as nn
 import torch.optim as optim
 from dataloader import dataloader
-from WDNet.unet_parts import *
+from model.WDNet.unet_parts import *
 from tensorboardX import SummaryWriter
-from WDNet.vgg import Vgg16
+from model.WDNet.vgg import Vgg16
 
 class generator(nn.Module):
     # Network Architecture is exactly same as in infoGAN (https://arxiv.org/abs/1606.03657)

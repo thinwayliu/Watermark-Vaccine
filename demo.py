@@ -22,9 +22,11 @@ def main():
     np.random.seed(args.seed)
 
     if args.model == 'WDNet':
-        model = generator(3, 3).eval()
+        model = generator(3, 3)
+        model.eval()
         optimizer = WDNet_WV(model,args,epsilon,start_epsilon,step_alpha,upper_limit,lower_limit)
-        model.load_state_dict(torch.load(os.path.join(args.load_path), map_location='cpu')).cuda()
+        model.load_state_dict(torch.load(os.path.join(args.load_path), map_location='cpu'))
+        model.cuda()
     elif args.model == 'BVMR':
         _opt = load_globals('./', {}, override=False)
         _device = torch.device('cuda:0')
@@ -89,7 +91,7 @@ if __name__ == '__main__':
 
     argparser = argparse.ArgumentParser()
     argparser.add_argument('--model', type=str, help='Watermark Removal Network (WDNet,SplitNet,BVMR)', default='WDNet')
-    argparser.add_argument('--load_path', type=str,default='./model_best.pth.tar')
+    argparser.add_argument('--load_path', type=str,default='./WDNet_G.pkl')
     argparser.add_argument('--image_path', type=str,default='./dataset/CLWD/test/Watermark_free_image/')
     argparser.add_argument('--logo_path', type=str,default='./dataset/CLWD/watermark_logo/train_color')
     argparser.add_argument('--epsilon', type=int, help='the bound of perturbation', default=8)
