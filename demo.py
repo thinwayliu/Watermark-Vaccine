@@ -29,7 +29,7 @@ def main():
         model.cuda()
     elif args.model == 'BVMR':
         _opt = load_globals('./', {}, override=False)
-        _device = torch.device('cuda:0')
+        _device = torch.device('cuda')
         model = init_nets(_opt, './', _device, 11).eval()
         optimizer = BVMR_WV(model,args,epsilon,start_epsilon,step_alpha,upper_limit,lower_limit)
     elif args.model == 'SplitNet':
